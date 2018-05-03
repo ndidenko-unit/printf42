@@ -106,3 +106,18 @@ int				ft_printf(char *str, ...)
 	va_end(ap);
 	return (len);
 }
+
+// int main()
+// {
+// 	int x;
+// 	int y;
+
+// 	setlocale(LC_ALL, "");
+// 	x = ft_printf("%.s", "4242");
+// 	printf("\n");
+// 	y = printf("%.s", "4242");
+// 	printf("\nx = %d, y = %d", x, y);
+// 	// ft_printf("%p\n", &ft_printf);
+// 	// system ("leaks a.out");
+// 	return (0);
+// }

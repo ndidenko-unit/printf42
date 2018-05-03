@@ -43,6 +43,7 @@ char		*ft_d2(char *str, t_parsing *parsing, int len, intmax_t nbr)
 char		*ft_d2_2(char *str, t_parsing *parsing, int len, intmax_t nbr)
 {
 	char	*res;
+	char	*tmp;
 
 	if (parsing->flag_zero == 1 && nbr >= 0 && parsing->precision <= 0 &&
 		parsing->flag_space == 0)
@@ -55,6 +56,12 @@ char		*ft_d2_2(char *str, t_parsing *parsing, int len, intmax_t nbr)
 	}
 	else if (nbr == 0 && parsing->precision == 0)
 		res = ft_right(str, parsing->width, 0, ' ');
+	else if (parsing->flag_plus == 1)
+	{
+		tmp = ft_right(str, len + 1, len, ' ');
+		tmp[0] = '+';
+		res = ft_right(tmp, parsing->width, len + 1, ' ');
+	}
 	else
 		res = ft_right(str, parsing->width, len, ' ');
 	return (res);

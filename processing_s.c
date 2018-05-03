@@ -79,7 +79,7 @@ void			processing_s(t_parsing *parsing, va_list ap)
 	if (str == 0)
 		str = "(null)";
 	len = ft_strlen(str);
-	if (parsing->width <= 0 && parsing->precision <= 0)
+	if (parsing->width < 0 && parsing->precision < 0)
 	{
 		ft_putstr(str);
 		parsing->len += len;
